@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Киберпанк</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>CYBERPUNK</h1>
+    <nav>
+        <a href="#intro">Введение</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#widgets">Виджеты</a>
+    </nav>
+</header>
+
+<style>
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr 300px;
+        grid-template-areas:
+                "header header"
+                "main widgets"
+                "footer footer";
+        min-height: 100vh;
+        background: #111;
+        color: #ff0;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    header {
+        grid-area: header;
+        background: #000;
+        border-bottom: 2px solid #ff0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        color: #ff0;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 700;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #fff;
+    }
+
+    main {
+        grid-area: main;
+        padding: 20px;
+    }
+
+    .intro h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 25px;
+        background: #ff0;
+        color: #000;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background 0.3s;
+    }
+
+    .button:hover {
+        background: #fff;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border: 2px solid #ff0;
+        display: block;
+    }
+
+    .widgets {
+        grid-area: widgets;
+        background: #000;
+        border-left: 2px solid #ff0;
+        padding: 20px;
+    }
+
+    .widget {
+        background: #111;
+        border: 1px solid #ff0;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .widget.clock {
+        font-size: 2.5rem;
+    }
+
+    .widget.weather {
+        font-size: 1.2rem;
+    }
+
+    .widget .condition {
+        display: block;
+        margin-top: 5px;
+        font-size: 1rem;
+    }
+
+    footer {
+        grid-area: footer;
+        background: #000;
+        border-top: 2px solid #ff0;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+</style>
+<main>
+    <section id="intro" class="intro">
+        <h2>Добро пожаловать в мир будущего</h2>
+        <p>
+            Погрузитесь в неоновую атмосферу мегаполисов, где технологии переплетаются с
+            человеческой плотью, а вечная ночь освещается жёлтым светом гигантских рекламных
+            голограмм.
+        </p>
+        <a href="#gallery" class="button">Исследовать галерею</a>
+    </section>
+
+    <section id="gallery" class="gallery">
+
+        <img src="C:\Users\st\Downloads\5433738885277547642.jpg" alt="Неоновый город">
+        <img src="cyber2.jpg" alt="Улица в мегаполисе">
+        <img src="cyber3.jpg" alt="Киберимпланты">
+        <img src="cyber4.jpg" alt="Хакер за работой">
+    </section>
+
+    <section id="widgets" class="widgets">
+        <div class="widget clock">
+            21:45
+        </div>
+        <div class="widget weather">
+            +8 °C
+            <span class="condition">Гроза</span>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2025 Cybernetica. Все права защищены.
+</footer>
+</body>
+</html>
