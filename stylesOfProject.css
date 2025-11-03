@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,93 +7,90 @@
 }
 
 :root {
-    --primary: #4A6CF7;
-    --primary-dark: #3A57D4;
-    --secondary: #6B7280;
-    --dark: #1F2A37;
-    --light: #F8FAFC;
-    --white: #FFFFFF;
-    --accent: #10B981;
-    --border: #E5E7EB;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    --brand-primary: #4A6CF7;
+    --brand-primary-dark: #3A57D4;
+    --text-secondary: #6B7280;
+    --text-primary: #1F2A37;
+    --background-light: #F8FAFC;
+    --background-white: #FFFFFF;
+    --accent-success: #10B981;
+    --border-light: #E5E7EB;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    color: var(--dark);
+    color: var(--text-primary);
     line-height: 1.6;
-    background-color: var(--white);
+    background-color: var(--background-white);
     scroll-behavior: smooth;
 }
 
-.container {
+.page-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header */
-header {
-    background-color: var(--white);
-    box-shadow: var(--shadow);
+
+.site-header {
+    background-color: var(--background-white);
+    box-shadow: var(--shadow-soft);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.header-container {
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 }
 
-.logo {
+.brand-logo {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 24px;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--brand-primary);
     text-decoration: none;
 }
 
-.logo i {
+.brand-logo__icon {
     font-size: 28px;
 }
 
-nav ul {
+.main-navigation ul {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-nav a {
+.navigation-link {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--text-primary);
     font-weight: 500;
     transition: color 0.3s;
     position: relative;
 }
 
-nav a:hover {
-    color: var(--primary);
+.navigation-link:hover {
+    color: var(--brand-primary);
 }
 
-nav a.active {
-    color: var(--primary);
+.navigation-link--active {
+    color: var(--brand-primary);
 }
 
-nav a::after {
-    display: none;
-}
-
-.auth-buttons {
+.user-authentication {
     display: flex;
     gap: 15px;
 }
 
-.btn {
+.action-button {
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: 500;
@@ -102,60 +100,60 @@ nav a::after {
     font-size: 16px;
 }
 
-.btn-outline {
+.action-button--outline {
     background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
+    border: 1px solid var(--brand-primary);
+    color: var(--brand-primary);
 }
 
-.btn-outline:hover {
-    background: var(--primary);
-    color: var(--white);
+.action-button--outline:hover {
+    background: var(--brand-primary);
+    color: var(--background-white);
 }
 
-.btn-primary {
-    background: var(--primary);
-    color: var(--white);
+.action-button--primary {
+    background: var(--brand-primary);
+    color: var(--background-white);
 }
 
-.btn-primary:hover {
-    background: var(--primary-dark);
+.action-button--primary:hover {
+    background: var(--brand-primary-dark);
 }
 
-/* Hero Section */
-.hero {
+/* ===== MAIN BANNER SECTION ===== */
+.main-banner {
     padding: 80px 0;
     background: linear-gradient(135deg, #f5f7ff 0%, #e6eeff 100%);
     position: relative;
     overflow: hidden;
 }
 
-.hero-content {
+.banner-content {
     max-width: 600px;
     position: relative;
     z-index: 2;
 }
 
-.hero h1 {
+.banner-headline {
     font-size: 48px;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
-.hero p {
+.banner-description {
     font-size: 18px;
-    color: var(--secondary);
+    color: var(--text-secondary);
     margin-bottom: 30px;
 }
 
-.hero-buttons {
+.banner-actions {
     display: flex;
     gap: 15px;
 }
 
-.hero-image {
+.banner-visual {
     position: absolute;
     right: 0;
     top: 50%;
@@ -164,94 +162,94 @@ nav a::after {
     max-width: 600px;
 }
 
-.hero-image img {
+.banner-visual img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-soft);
 }
 
-/* Features Section */
-.features {
+
+.features-section {
     padding: 80px 0;
 }
 
-.section-header {
+.section-heading {
     text-align: center;
     max-width: 600px;
     margin: 0 auto 50px;
 }
 
-.section-header h2 {
+.section-heading__title {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
-.section-header p {
-    color: var(--secondary);
+.section-heading__subtitle {
+    color: var(--text-secondary);
     font-size: 18px;
 }
 
-.features-grid {
+.features-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.feature-card {
-    background: var(--white);
+.feature-item {
+    background: var(--background-white);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-soft);
     transition: transform 0.3s;
 }
 
-.feature-card:hover {
+.feature-item:hover {
     transform: translateY(-5px);
 }
 
-.feature-icon {
+.feature-icon-container {
     width: 60px;
     height: 60px;
-    background: var(--light);
+    background: var(--background-light);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    color: var(--primary);
+    color: var(--brand-primary);
     font-size: 24px;
 }
 
-.feature-card h3 {
+.feature-item__title {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
-.feature-card p {
-    color: var(--secondary);
+.feature-item__description {
+    color: var(--text-secondary);
 }
 
-/* Destinations Section */
-.destinations {
+
+.destinations-section {
     padding: 80px 0;
-    background: var(--light);
+    background: var(--background-light);
 }
 
-.destinations-grid {
+.destinations-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .destination-card {
-    background: var(--white);
+    background: var(--background-white);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-soft);
     transition: transform 0.3s;
 }
 
@@ -259,85 +257,85 @@ nav a::after {
     transform: translateY(-5px);
 }
 
-.destination-image {
+.destination-image-container {
     height: 200px;
     overflow: hidden;
 }
 
-.destination-image img {
+.destination-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
 }
 
-.destination-card:hover .destination-image img {
+.destination-card:hover .destination-image-container img {
     transform: scale(1.05);
 }
 
-.destination-info {
+.destination-details {
     padding: 20px;
 }
 
-.destination-info h3 {
+.destination-name {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
 .destination-location {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: var(--secondary);
+    color: var(--text-secondary);
     margin-bottom: 15px;
 }
 
-.destination-price {
+.destination-pricing {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.price {
+.destination-price {
     font-size: 20px;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--brand-primary);
 }
 
-.rating {
+.destination-rating {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: var(--accent);
+    color: var(--accent-success);
 }
 
-/* Testimonials */
-.testimonials {
+
+.feedback-section {
     padding: 80px 0;
 }
 
-.testimonials-grid {
+.feedback-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.testimonial-card {
-    background: var(--white);
+.feedback-item {
+    background: var(--background-white);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-soft);
 }
 
-.testimonial-text {
+.feedback-text {
     font-style: italic;
     margin-bottom: 20px;
-    color: var(--secondary);
+    color: var(--text-secondary);
 }
 
-.testimonial-author {
+.feedback-author {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -356,32 +354,32 @@ nav a::after {
     object-fit: cover;
 }
 
-.author-info h4 {
+.author-info__name {
     font-weight: 600;
     margin-bottom: 5px;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
-.author-info p {
-    color: var(--secondary);
+.author-info__role {
+    color: var(--text-secondary);
     font-size: 14px;
 }
 
-/* CTA Section */
-.cta {
+
+.promo-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+    color: var(--background-white);
     text-align: center;
 }
 
-.cta h2 {
+.promo-heading {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.cta p {
+.promo-description {
     font-size: 18px;
     margin-bottom: 30px;
     max-width: 600px;
@@ -390,25 +388,25 @@ nav a::after {
     opacity: 0.9;
 }
 
-.cta-buttons {
+.promo-actions {
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
-.btn-light {
-    background: var(--white);
-    color: var(--primary);
+.action-button--light {
+    background: var(--background-white);
+    color: var(--brand-primary);
 }
 
-.btn-light:hover {
-    background: var(--light);
+.action-button--light:hover {
+    background: var(--background-light);
 }
 
-/* Footer */
-footer {
-    background: var(--dark);
-    color: var(--white);
+
+.site-footer {
+    background: var(--text-primary);
+    color: var(--background-white);
     padding: 60px 0 30px;
 }
 
@@ -419,37 +417,37 @@ footer {
     margin-bottom: 40px;
 }
 
-.footer-column h3 {
+.footer-column__title {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-.footer-links {
+.footer-links-list {
     list-style: none;
 }
 
-.footer-links li {
+.footer-links-list li {
     margin-bottom: 10px;
 }
 
-.footer-links a {
+.footer-link {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.footer-links a:hover {
-    color: var(--white);
+.footer-link:hover {
+    color: var(--background-white);
 }
 
-.social-links {
+.social-links-container {
     display: flex;
     gap: 15px;
     margin-top: 20px;
 }
 
-.social-links a {
+.social-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -457,12 +455,12 @@ footer {
     height: 40px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    color: var(--white);
+    color: var(--background-white);
     transition: background 0.3s;
 }
 
-.social-links a:hover {
-    background: var(--primary);
+.social-link:hover {
+    background: var(--brand-primary);
 }
 
 .footer-bottom {
@@ -473,97 +471,3 @@ footer {
     font-size: 14px;
 }
 
-/* Mobile Navigation */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--dark);
-    cursor: pointer;
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .hero {
-        text-align: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .hero-image {
-        position: relative;
-        width: 100%;
-        max-width: 500px;
-        margin: 40px auto 0;
-        transform: none;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-container {
-        flex-wrap: wrap;
-    }
-
-    nav {
-        order: 3;
-        width: 100%;
-        margin-top: 20px;
-        display: none;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .auth-buttons {
-        margin-left: auto;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero {
-        padding: 60px 0;
-    }
-
-    .features, .destinations, .testimonials, .cta {
-        padding: 60px 0;
-    }
-
-    .section-header h2 {
-        font-size: 28px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-}
